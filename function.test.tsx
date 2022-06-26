@@ -1,27 +1,27 @@
 const fuc = require('./function');
 
-//1-toBe
+//1-toBe : để so sánh ===
 test('Adds 2+2 to equal 4', () => {
     expect(fuc.add(2, 2)).toBe(4);
 })
 
-//2-not
+//2-not : trả về phủ định lại 
 test('Adds 2+2 to Not equal 5', () => {
     expect(fuc.add(2, 2)).not.toBe(5);
 })
 
-//3-toBeNull
-test(' Should be null', () => {
+//3-toBeNull :so sánh với giá trị null
+test(' Should be null: So sánh với null', () => {
     expect(fuc.isNull()).toBeNull();
 })
 
-//4-toBeFalsy
-test(' Should be falsy', () => {
+//4-toBeFalsy: so sánh với giá trị false
+test(' Should be falsy : So sánh với giá trị false', () => {
     expect(fuc.checkValue(undefined)).toBeFalsy();
 })
 
-//5-toEqual
-test(' Should be Brand Traversy object', () => {
+//5-toEqual: kiểm tra object hay array có giống nhau hay không (toBe thì không làm được)
+test(' Should be Brand Traversy object: So sánh object với aray', () => {
     expect(fuc.createUser()).toEqual({
         lastName: 'Son',
         firstName: 'Deptrai',
@@ -29,19 +29,19 @@ test(' Should be Brand Traversy object', () => {
 })
 
 //6-Less than and greater than
-test(' Should be under 1600', () => {
+test(' Should be under 1600: so sánh nhỏ hơn hoặc bằng 1600', () => {
     const load1 = 800;
     const load2 = 800;
     expect(load1 + load2).toBeLessThanOrEqual(1600);
 });
 
-//7-Regex
-test('There is no I in team', () => {
+//7-Regex : Có thể kiểm tra một đoạn văn bản với regular expressions
+test('Không có I trong team', () => {
     expect('team').not.toMatch(/I/i);
 });
 
 //8-Arrays
-test(' Admin should be in usernames', () => {
+test(' Admin should be in usernames : kiểm tra giá trị có trong 1 mảng', () => {
     const usernames = ['sondeptrai', 'son', 'hieu'];
     expect(usernames).toContain('sondeptrai')
 })
